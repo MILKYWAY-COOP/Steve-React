@@ -1,11 +1,30 @@
-// let newElement = document.createElement("h1")
-// newElement.innerText = "This is JSX"
-// newElement.className = "header"
-// document.getElementById("root").append(newElement)
+// const page = (
+//     <div>
+//         <h1 className="header">This is JSX</h1>
+//         <p>This is a paragraph</p>
+//     </div>
+// )
 
-// console.log(newElement)
+/* 
+Challenge: 
 
-ReactDOM.render(
-  <h1 className="header">Hello, React!</h1>,
-  document.getElementById('root')
-);
+Create a navbar in JSX:
+    - Use the semantic `nav` element as the parent wrapper
+    - Have an h1 element with the brand name of your "website"
+    - Insert an unordered list for the other nav elements
+        - Inside the `ul`, have three `li`s for "Pricing",
+        "About", and "Contact"
+    - Don't worry about styling yet - it'll just be plain-looking HTML for now
+*/
+
+const navBar = (
+    <nav>
+        <h1>MilkyWay Bistro</h1>
+        <ul>
+            <li>Home</li>
+            <li>Contact</li>
+            <li>Blog</li>
+        </ul>
+    </nav>
+)
+ReactDOM.render(navBar, document.getElementById('root'));
