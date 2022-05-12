@@ -44,6 +44,9 @@ main {
     flex-direction: column;
     padding: 57px 27px;
     color: white;
+    background-image: url(./components/images/half.svg);
+    background-repeat: no-repeat;
+    background-position: right 75%;
 }
 
 .main--title {
