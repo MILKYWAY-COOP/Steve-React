@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: Inter, sans-serif;
+    font-family: 'Comfortaa', cursive;
     height: 100vh;
     background-color: #282D35;
 }
@@ -39,6 +39,9 @@ nav {
 }
 
 main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     padding: 57px 27px;
     color: white;
 }
@@ -60,6 +63,6 @@ main {
 }
 
 .main--facts > li::marker {
-    font-size: 1.4rem;
+    font-size: 20px;
     color: #61DAFB;
 }
