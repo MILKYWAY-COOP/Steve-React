@@ -1,13 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './components/Navbar';
+import Main from './components/Main';
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <h1> Hello World</h1>
-      <img src='./logo.svg'/>
+    <div className="container">
+      <Navbar />
+      <Main />
     </div>
   );
 }
-
-export default App;
