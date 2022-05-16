@@ -4,7 +4,7 @@ import img from './images/airbnb.svg'
 export default function Navbar() {
     return (
         <nav>
-            <img src={img} alt='air bnb logo'/>
+            <img src={img} alt='air bnb logo' className='nav--logo'/>
         </nav>
     )
 }
