@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  background-color: #23252c;
+}
+.joke {
+  border-radius: 15px;
+  background: #cde0b2;
+  padding: 20px;
+  width: auto;
+  height: 150px;
+  margin: 20px;
+}
+h3 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 800;
+}
+p {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 500;
+    text-decoration: underline;
+}
