@@ -5,3 +5,8 @@
 body {
     margin: 0;
 }
+nav {
+    height: 70px;
+    display: flex;
+    background-color: blue;
+}
