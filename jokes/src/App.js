@@ -1,10 +1,12 @@
 import React from 'react';
-import Joke from './components/Joke'
+import Joke from './components/Joke';
 
 export default function App() {
-    return (
-      <div>
-        <Joke
+  return <div></div>;
+}
+
+{
+  /* <Joke
           setup="I got my daughter a fridge for her birthday."
           punchline="I can't wait to see her face light up when she opens it."
         />
@@ -23,7 +25,5 @@ export default function App() {
         <Joke
           setup="What's the best thing about Switzerland?"
           punchline="I don't know, but the flag is a big plus!"
-        />
-      </div>
-    );
+        /> */
 }
