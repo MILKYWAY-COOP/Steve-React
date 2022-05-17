@@ -6,6 +6,7 @@ import Data from './data';
 
 
 export default function App() {
+
   const data = Data.map((item) => {
     return (
       <Card
@@ -18,10 +19,14 @@ export default function App() {
       />
     );
   });
+    
+    
   return (
     <>
       <Navbar />
-      {data}
+          <section className='cards-list'>
+              {data}
+      </section>
     </>
   );
 }
