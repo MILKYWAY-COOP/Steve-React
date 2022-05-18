@@ -10,10 +10,20 @@ nav {
   background-color: rgb(244, 112, 112);
   justify-content: center;
   width: 100%;
+  box-shadow: 3px 0px 2px 1.3px rgba(40, 33, 33, 0.8);
+  overflow: hidden;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .tour--body {
   margin-bottom: 30px;
 }
+
 .nav-text {
   color: white;
   margin-left: 5px;
