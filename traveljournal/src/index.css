@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+}
+
+nav {
+    height: 50px;
+    display: flex;
+    padding: 20px 36px;
+    background-color: rgb(244, 112, 112);
+    justify-content: center;
+}
+
+.nav-text {
+  color: white;
+  margin-left: 5px; 
+}
