@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  font-family: 'Comfortaa', cursive;
   background-color: beige;
 }
 
@@ -15,6 +14,7 @@ nav {
 .nav-text {
   color: white;
   margin-left: 5px;
+  font-family: 'Comfortaa', cursive;
 }
 
 .card--body {
@@ -24,18 +24,22 @@ nav {
 
 .card {
   width: 500px;
-  height: 170px;
-  background-color: aqua;
+  height: auto;
+  margin: 36px;
   display: grid;
   grid-template-columns: 126px 326px;
   column-gap: 19px;
 }
 
 .card--img {
-
+  width: 126px;
+  height: 168px;
+  border-radius: 10%;
+  object-fit: cover;
 }
 
 .card--info {
+  font-family: 'Comfortaa', cursive;
   padding: 0;
   margin: 0;
   display: flex;
@@ -51,17 +55,38 @@ nav {
 }
 
 .icon {
-  width: 15px;
+  width: auto;
   height: 20px;
 }
 
-.location--country{
+.location--country {
   text-transform: uppercase;
   margin: 5px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
 }
 
 .location--map {
   margin-left: 5px;
   width: auto;
-  font-size: 10.24px;
+  font-size: 12.24px;
+  color: rgb(36, 34, 34);
+}
+
+.card--place {
+  font-weight: 700;
+  font-size: 25px;
+  margin: 0px;
+  padding-bottom: 14px;
+}
+
+.card--date {
+  padding: 0px;
+  margin: 0px;
+}
+
+.card--description {
+  line-height: 15.36px;
+  font-weight: 400px;
+  font-size: 10.9px;
 }
