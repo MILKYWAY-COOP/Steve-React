@@ -7,13 +7,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #672280;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
   height: 65px;
   box-shadow: 3px 0px 2px 1.3px rgba(40, 33, 33, 0.8);
 }
 
 .logo {
-  background-color: #672280;
+  background-color: inherit;
   height: 26.22px;
   margin-left: 20px;
   margin-bottom: 20px;
@@ -47,12 +47,13 @@ nav {
   display: flex;
   align-items: center;
   margin-bottom: 26px;
+  background: none;
 }
 
 .nav--msg > h6 {
   font-size: 20px;
   text-align: right;
-  background-color: #672280;
+  background: inherit;
   color: rgb(255, 255, 255);
   font-family: 'Karla', sans-serif;
 }
