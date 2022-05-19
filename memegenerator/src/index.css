@@ -4,10 +4,11 @@
 }
 
 nav {
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
   height: 65px;
   box-shadow: 3px 0px 2px 1.3px rgba(40, 33, 33, 0.8);
 }
@@ -33,11 +34,12 @@ nav {
   font: karla;
   color: rgb(255, 255, 255);
   font-size: 20.7482px;
+  letter-spacing: -0.05rem;
 }
 
 .logo > img {
   width: 31.31px;
-  height: auto;
+  height: 100%;
   margin: 6.69px;
 }
 
@@ -56,4 +58,32 @@ nav {
   background: inherit;
   color: rgb(255, 255, 255);
   font-family: 'Karla', sans-serif;
+}
+
+main {
+  padding: 36px;
+}
+
+.form {
+  font-family: 'Karla', sans-serif;
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+}
+
+.form--input {
+  font-family: 'Karla', sans-serif;
+  border-radius: 5px;
+  border: 1px solid #d5d4d8;
+  text-indent: 5px;
+}
+
+.form--button {
+  grid-column: 1 / -1;
+  font-family: 'Karla', sans-serif;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
 }
