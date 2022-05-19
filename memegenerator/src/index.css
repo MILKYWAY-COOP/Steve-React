@@ -9,6 +9,7 @@ nav {
   align-items: center;
   background-color: #672280;
   height: 65px;
+  box-shadow: 3px 0px 2px 1.3px rgba(40, 33, 33, 0.8);
 }
 
 .logo {
