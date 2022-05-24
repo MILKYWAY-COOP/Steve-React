@@ -1,26 +1,10 @@
-export default [
-  {
-    id: 1,
-    on: true
-  },
-  {
-    id: 2,
-    on: false
-  },
-  {
-    id: 3,
-    on: true
-  },
-  {
-    id: 4,
-    on: true
-  },
-  {
-    id: 5,
-    on: false
-  },
-  {
-    id: 6,
-    on: false
-  }
-];
+import React from 'react'
+
+export default function Box(props) {
+    const styles = {
+        backgroundColor: props.on ? "#222222" : 'none'
+    }
+    return (
+        <div style={styles} className="box"></div>
+    )
+}
