@@ -92,6 +92,6 @@ main {
 .meme--image {
   max-width: 100%;
   align-self: center;
-  border-radius: 5px;
-  height: 500px;
+  border-radius: 10px;
+  height: 100px;
 }
