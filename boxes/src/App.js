@@ -1,16 +1,16 @@
 import React from 'react';
-import boxes from './components/boxes'
+import boxes from './components/boxes';
 
-export default function App() {
-  const [boîte, setboîte] = React.useState(boxes); 
+export default function App(props) {
+  const [box, setBox] = React.useState(boxes);
 
-  const boîteElements = boîte.map((item) => {
-    return <div key={item.id} className="box"></div>;
-  });
+  const styles = {
+    backgroundColor: props.darkMode ? '#36454F' : '#F5F5F5'
+  };
 
-  return (
-    <main>
-      {boîteElements}
-    </main>
+  const boxElements = box.map((item) => (
+    <div key={item.id} style={styles} className="box"></div>)
   );
+
+  return <main>{boxElements}</main>;
 }
