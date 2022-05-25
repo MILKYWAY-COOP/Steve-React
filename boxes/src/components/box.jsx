@@ -1,14 +1,10 @@
 import React from 'react';
 
-export default function Box(props) {
+export default function Boxy(props) {
   const styles = {
-    backgroundColor: props.on ? '#222222' : 'transparent'
-    };
-
-    return <div
-        style={styles}
-        className="box"
-        onClick={() => props.toggle (props.id)}
-    >
-    </div>;
+    backgroundColor: props.isOn ? '#36454F' : '#ebf2f2'
+  };
+  return <div
+    style={styles}
+    className="box"></div>;
 }
