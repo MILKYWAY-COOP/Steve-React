@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import starFilled from './components/images/star-filled.png';
 import starEmpty from './components/images/star-empty.png';
 import h from './components/images/h.jpg';
@@ -15,9 +15,13 @@ export default function App() {
   let starIcon = contact.isFavorite ? starFilled : starEmpty;
 
   function toggleFavorite() {
-    console.log('Toggle Favorite');
+    setContact((prevContact) => {
+      return {
+        ...prevContact,
+        isFavorite: !prevContact.isFavorite
+      };
+    });
   }
-
   return (
     <main>
       <article className="card">
