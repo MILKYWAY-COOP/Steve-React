@@ -5,7 +5,6 @@ export default function App() {
 
   function changeState() {
     setIsGoingOut(prevState => !prevState);
-    console.log(setIsGoingOut)
   }
 
   return (
