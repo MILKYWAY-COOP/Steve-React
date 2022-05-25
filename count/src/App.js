@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './components/count';
 
 export default function App() {
   const [count, setCount] = React.useState(0);
@@ -8,7 +9,7 @@ export default function App() {
   }
 
   function subtract() {
-    setCount(prevCount => prevCount - 1);
+    setCount((prevCount) => prevCount - 1);
   }
 
   return (
@@ -16,9 +17,7 @@ export default function App() {
       <button className="counter--minus" onClick={subtract}>
         –
       </button>
-      <div className="counter--count">
-        <h1>{count}</h1>
-      </div>
+      <Counter number={ count}/>
       <button className="counter--plus" onClick={add}>
         +
       </button>
