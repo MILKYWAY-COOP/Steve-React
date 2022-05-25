@@ -7,21 +7,9 @@ export default function App(props) {
 
   function toggle(id) {
     setBox((prevBox) => {
-      const newBoxes = [];
-      for (let i = 0; i < prevBox.length; i++) {
-        const currentBox = prevBox[i];
-        if (currentBox.id === id) {
-          const updatedBox = {
-            ...currentBox,
-            on: !currentBox.on
-          };
-          newBoxes.push(updatedBox)
-        }
-        else {
-          newBoxes.push(currentBox)
-        }
-      }
-      return newBoxes
+      return prevBox.map((i) => {
+        return i.id === id ? { ...i, on: !i.on } : i;
+      });
     });
   }
 
