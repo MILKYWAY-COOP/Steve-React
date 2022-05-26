@@ -7,7 +7,8 @@ export default function ControlledInputs() {
     email: '',
     comments: '',
     isFriendly: false,
-    employment: ''
+    employment: '',
+    favColor: ''
   });
 
   function handleChange(event) {
@@ -18,13 +19,16 @@ export default function ControlledInputs() {
         [name]: type === 'checkbox' ? checked : value
       };
     });
+  }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        console.log(formInput)
     }
-    
-    console.log(formInput.employment)
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="First Name"
@@ -46,60 +50,82 @@ export default function ControlledInputs() {
           name="email"
           value={formInput.email}
         />
+        <textarea
+          name="comments"
+          value={formInput.comments}
+          onChange={handleChange}
+          placeholder="Comments"
+        />
+        <input
+          type="checkbox"
+          id="isFriendly"
+          checked={formInput.isFriendly}
+          onChange={handleChange}
+          name="isFriendly"
+        />
+        <label htmlFor="isFriendly">Are you friendly?</label>
+        <br />
+        <br />
+
+        <fieldset>
+          <legend>Current employment status</legend>
+
+          <input
+            type="radio"
+            id="unemployed"
+            name="employment"
+            value="unemployed"
+            checked={formInput.employment === 'unemployed'}
+            onChange={handleChange}
+          />
+          <label htmlFor="unemployed">Unemployed</label>
+          <br />
+
+          <input
+            type="radio"
+            id="part-time"
+            name="employment"
+            value="part-time"
+            checked={formInput.employment === 'part-time'}
+            onChange={handleChange}
+          />
+          <label htmlFor="Part-time">Part-time</label>
+          <br />
+
+          <input
+            type="radio"
+            id="full-time"
+            name="employment"
+            value="full-time"
+            checked={formInput.employment === 'full-time'}
+            onChange={handleChange}
+          />
+          <label htmlFor="fulltime">Full-time</label>
+          <br />
+        </fieldset>
+        <br />
+
+        <label htmlFor="favColor">What is your favorite color?</label>
+        <br />
+        <select
+          id="favColor"
+          value={formInput.favColor}
+          onChange={handleChange}
+          name="favColor"
+        >
+          <option value="">--Choose--</option>
+          <option value="Red">Red</option>
+          <option value="Orange">Orange</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Green<">Green</option>
+          <option value="Blue">Blue</option>
+          <option value="Indigo">Indigo</option>
+          <option value="Violet">Violet</option>
+              </select>\
+              <br/>
+              <br />
+            <button>Submit Form</button>
       </form>
-      <textarea
-        name="comments"
-        value={formInput.comments}
-        onChange={handleChange}
-        placeholder="Comments"
-      />
-      <input
-        type="checkbox"
-        id="isFriendly"
-        checked={formInput.isFriendly}
-        onChange={handleChange}
-        name="isFriendly"
-      />
-      <label htmlFor="isFriendly">Are you friendly?</label>
-      <br />
-      <br />
-
-      <fieldset>
-        <legend>Current employment status</legend>
-
-        <input
-          type="radio"
-          id="unemployed"
-          name="employment"
-          value="unemployed"
-          checked={formInput.employment === 'unemployed'}
-          onChange={handleChange}
-        />
-        <label htmlFor="unemployed">Unemployed</label>
-        <br />
-
-        <input
-          type="radio"
-          id="part-time"
-          name="employment"
-          value="part-time"
-          checked={formInput.employment === 'part-time'}
-          onChange={handleChange}
-        />
-        <label htmlFor="Part-time">Part-time</label>
-        <br />
-
-        <input
-          type="radio"
-          id="full-time"
-          name="employment"
-          value="full-time"
-          checked={formInput.employment === 'full-time'}
-          onChange={handleChange}
-        />
-        <label htmlFor="fulltime">Full-time</label>
-        <br />
-      </fieldset>
     </>
   );
 }
