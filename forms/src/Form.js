@@ -4,7 +4,7 @@ export default function Form() {
   const [formInput, setFormInput] = React.useState({
     firstName: '',
     lastName: '',
-    Email: ''
+    email: ''
   });
 
   console.log(formInput.firstName, formInput.lastName, formInput.Email);
@@ -36,7 +36,7 @@ export default function Form() {
         type="email"
         placeholder="Email"
         onChange={handleChange}
-        name="Email"
+        name="email"
       />
     </form>
   );
