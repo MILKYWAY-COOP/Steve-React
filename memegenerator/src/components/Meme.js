@@ -1,3 +1,4 @@
+import { type } from '@testing-library/user-event/dist/type';
 import React from 'react';
 import memesData from '../memeData.js';
 
@@ -13,22 +14,50 @@ export default function Meme() {
   function getMemeImage() {
     const memesArray = allMemeImages.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url
-    setMemeImage(prevMeme => ({
-      ...prevMeme, 
+    const url = memesArray[randomNumber].url;
+    setMemeImage((prevMeme) => ({
+      ...prevMeme,
       randomImage: url
     }));
+  }
+
+  function addText(event) {
+    const { value, name } = event.target;
+    setMemeImage((prevData) => {
+      return {
+        ...prevData,
+        [name]: value
+      };
+    });
   }
 
   return (
     <main>
       <div className="form">
-        <input type="text" placeholder="Top text" className="form--input" />
-        <input type="text" placeholder="Bottom text" className="form--input" />
+        <input
+          type="text"
+          placeholder="Top text"
+          className="form--input"
+          onChange={addText}
+          name="topText"
+          value={memeImage.topText}
+        />
+        <input
+          type="text"
+          placeholder="Bottom text"
+          className="form--input"
+          onChange={addText}
+          name="bottomText"
+          value={memeImage.bottomText}
+        />
         <button className="form--button" onClick={getMemeImage}>
           Get a new meme image 🖼
         </button>
+      </div>
+      <div className="meme">
         <img src={memeImage.randomImage} className="meme--image" />
+        <h2 className="meme--text top">{memeImage.topText}</h2>
+        <h2 className="meme--text bottom">{memeImage.bottomText}</h2>
       </div>
     </main>
   );
