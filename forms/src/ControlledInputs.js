@@ -21,10 +21,10 @@ export default function ControlledInputs() {
     });
   }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        console.log(formInput)
-    }
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(formInput);
+  }
 
   return (
     <>
@@ -66,7 +66,6 @@ export default function ControlledInputs() {
         <label htmlFor="isFriendly">Are you friendly?</label>
         <br />
         <br />
-
         <fieldset>
           <legend>Current employment status</legend>
 
@@ -104,7 +103,6 @@ export default function ControlledInputs() {
           <br />
         </fieldset>
         <br />
-
         <label htmlFor="favColor">What is your favorite color?</label>
         <br />
         <select
@@ -121,10 +119,11 @@ export default function ControlledInputs() {
           <option value="Blue">Blue</option>
           <option value="Indigo">Indigo</option>
           <option value="Violet">Violet</option>
-              </select>\
-              <br/>
-              <br />
-            <button>Submit Form</button>
+        </select>
+        \
+        <br />
+        <br />
+        <button>Submit Form</button>
       </form>
     </>
   );
