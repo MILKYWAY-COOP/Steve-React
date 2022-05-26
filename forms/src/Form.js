@@ -1,30 +1,43 @@
-import React from 'react'
+import React from 'react';
 
 export default function Form() {
-    const [firstName, setFirstName] = React.useState('')
-    const [lastName, setLastName] = React.useState('')
+  const [formInput, setFormInput] = React.useState({
+    firstName: '',
+    lastName: '',
+    Email: ''
+  });
 
-    function handleChangeFName(event) { 
-        setFirstName(event.target.value);
-    }
+  console.log(formInput.firstName, formInput.lastName, formInput.Email);
 
-    function handleChangeLName(event) {
-      setLastName(event.target.value);
-    }
+  function handleChange(event) {
+    setFormInput((prevFormData) => {
+      return {
+        ...prevFormData,
+        [event.target.name]: event.target.value
+      };
+    });
+  }
 
-    console.log(firstName, lastName);
-    return (
-      <form>
-        <input
-          type="text"
-          placeholder="First Name"
-          onChange={handleChangeFName}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          onChange={handleChangeLName}
-        />
-      </form>
-    );
+  return (
+    <form>
+      <input
+        type="text"
+        placeholder="First Name"
+        onChange={handleChange}
+        name="firstName"
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        onChange={handleChange}
+        name="lastName"
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        onChange={handleChange}
+        name="Email"
+      />
+    </form>
+  );
 }
