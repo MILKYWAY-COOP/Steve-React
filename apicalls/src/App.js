@@ -11,11 +11,20 @@ export default function App() {
       .then((data) => setStarWarsData(data));
   }, [count]);
 
+  function previousCount() {
+    count >= 2
+      ? setCount((prevCount) => prevCount - 1)
+      : alert('Cannot find 0 or negative value');
+  }
+
   return (
     <div>
       <h2>The Count is {count}</h2>
-      <button onClick={() => setCount(prevCount => prevCount + 1)}>Get Next Character</button>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+        Get Next Character
+      </button>
       <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+      <button onClick={previousCount}>Get Previous Character</button>
     </div>
   );
 }
