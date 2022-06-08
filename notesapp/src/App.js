@@ -29,30 +29,16 @@ export default function App() {
   function updateNote(text) {
     // Try to rearrange the most recently-modified
     // not to be at the top
-    setNotes((oldNotes) => {
-      const newArray = [];
-      for (let i = 0; i < oldNotes.length; i++) {
-        const oldNote = oldNotes[i];
-        if (oldNote.id === currentNoteId) {
-          newArray.unshift({
-            ...oldNote,
-            body: text
-          });
-        } else {
-          newArray.push(oldNote);
-        }
-        return newArray;
-      }
-      //create a new empty array
-      //Loop over the original array
-      //if the id matches
-      //put the updated note at the
-      //beginning of the new array
-      //else
-      //push the old note to the end
-      //of the new array
-      //return the new array
-    });
+    //create a new empty array
+    //Loop over the original array
+    //if the id matches
+    //put the updated note at the
+    //beginning of the new array
+    //else
+    //push the old note to the end
+    //of the new array
+    //return the new array
+
     // This does not rearrange the notes
     // setNotes((oldNotes) =>
     //   oldNotes.map((oldNote) => {
@@ -61,6 +47,18 @@ export default function App() {
     //       : oldNote;
     //   })
     // );
+    setNotes((oldNotes) => {
+      const newArray = [];
+      for (let i = 0; i < oldNotes.length; i++) {
+        const oldNote = oldNotes[i];
+        if (oldNote.id === currentNoteId) {
+          newArray.unshift({ ...oldNote, body: text });
+        } else {
+          newArray.push(oldNote);
+        }
+      }
+      return newArray;
+    });
   }
 
   function findCurrentNote() {
