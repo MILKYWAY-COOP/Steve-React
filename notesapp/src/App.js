@@ -6,7 +6,7 @@ import Sidebar from './components/Sidebar';
 import Editor from './components/Editor';
 
 export default function App() {
-  const [notes, setNotes] = React.useState(
+  const [notes, setNotes] = React.useState(() =>
     JSON.parse(localStorage.getItem('notes')) || []
   );
   const [currentNoteId, setCurrentNoteId] = React.useState(
