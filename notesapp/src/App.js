@@ -33,11 +33,15 @@ export default function App() {
       const newArray = [];
       for (let i = 0; i < oldNotes.length; i++) {
         const oldNote = oldNotes[i];
-        if (oldNotes.id === currentNoteId) {
-          newArray.unshift({ ...oldNote, body: text });
+        if (oldNote.id === currentNoteId) {
+          newArray.unshift({
+            ...oldNote,
+            body: text
+          });
         } else {
-          newArray.push(oldNote)
+          newArray.push(oldNote);
         }
+        return newArray;
       }
       //create a new empty array
       //Loop over the original array
@@ -49,15 +53,15 @@ export default function App() {
       //of the new array
       //return the new array
     });
+    // This does not rearrange the notes
+    // setNotes((oldNotes) =>
+    //   oldNotes.map((oldNote) => {
+    //     return oldNote.id === currentNoteId
+    //       ? { ...oldNote, body: text }
+    //       : oldNote;
+    //   })
+    // );
   }
-  // This does not rearrange the notes
-  // setNotes((oldNotes) =>
-  //   oldNotes.map((oldNote) => {
-  //     return oldNote.id === currentNoteId
-  //       ? { ...oldNote, body: text }
-  //       : oldNote;
-  //   })
-  // );
 
   function findCurrentNote() {
     return (
