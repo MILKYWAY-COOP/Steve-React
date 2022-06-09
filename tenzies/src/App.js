@@ -20,19 +20,25 @@ function App() {
     setDice(allNewDice());
   }
 
+  function holdDice(id) {
+    console.log(id)
+  }
+
   const die = dice.map((item) => {
     return (
       <Die
         key={item.id}
+        id={item.id}
         value={item.value}
         isHeld={item.isHeld}
+        handleClick={holdDice}
       />
     );
   });
 
   return (
     <main>
-      <div className="dice-container">{die}</div>
+      <div className="dice-container" >{die}</div>
       <button className="roll-btn" onClick={rollDice}>
         Roll
       </button>
