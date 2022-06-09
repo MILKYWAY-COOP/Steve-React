@@ -15,8 +15,8 @@ function App() {
       myHelds.push(dice[i].isHeld);
     }
     if (allEqual(myValues) && allEqual(myHelds)) {
-      setTenzies(true)
-      console.log("You won")
+      setTenzies(true);
+      console.log('You won');
     }
   }, [dice]);
 
