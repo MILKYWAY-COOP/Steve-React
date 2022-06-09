@@ -10,8 +10,8 @@ function App() {
     for (let i = 0; i < 10; i++) {
       const myNum = Math.floor(Math.random() * 10) + 1;
       myNum > 6
-        ? myList.push({ value: myNum - 4, isHeld: true, id: nanoid() })
-        : myList.push({ value: myNum, isHeld: true, id: nanoid() });
+        ? myList.push({ value: myNum - 4, isHeld: false, id: nanoid() })
+        : myList.push({ value: myNum, isHeld: false, id: nanoid() });
     }
     return myList;
   }
@@ -21,7 +21,13 @@ function App() {
   }
 
   const die = dice.map((item) => {
-    return <Die key={item.id} value={item.value} />;
+    return (
+      <Die
+        key={item.id}
+        value={item.value}
+        isHeld={item.isHeld}
+      />
+    );
   });
 
   return (
