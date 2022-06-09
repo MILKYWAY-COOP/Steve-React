@@ -31,7 +31,7 @@ function App() {
         id={item.id}
         value={item.value}
         isHeld={item.isHeld}
-        handleClick={holdDice}
+        holdDice={holdDice}
       />
     );
   });
