@@ -5,19 +5,28 @@ import { nanoid } from 'nanoid';
 function App() {
   const [dice, setDice] = React.useState(allNewDice());
 
+  function generateNewDie() {
+    return {
+      value: Math.ceil(Math.random() * 6),
+      isHeld: false,
+      id: nanoid()
+    };
+  }
+
   function allNewDice() {
     const myList = [];
     for (let i = 0; i < 10; i++) {
-      const myNum = Math.floor(Math.random() * 10) + 1;
-      myNum > 6
-        ? myList.push({ value: myNum - 4, isHeld: false, id: nanoid() })
-        : myList.push({ value: myNum, isHeld: false, id: nanoid() });
+      myList.push(generateNewDie());
     }
     return myList;
   }
 
   function rollDice() {
-    setDice(allNewDice());
+    setDice((prevDice) =>
+      prevDice.map((die) => {
+        return die.isHeld ? die : generateNewDie();
+      })
+    );
   }
 
   function holdDice(id) {
@@ -42,6 +51,11 @@ function App() {
 
   return (
     <main>
+      <h1 className="title">Tenzies</h1>
+      <p className="instructions">
+        Roll until all dice are the same. Click each die to freeze it at its
+        current value between rolls.
+      </p>
       <div className="dice-container">{die}</div>
       <button className="roll-btn" onClick={rollDice}>
         Roll
