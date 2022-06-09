@@ -21,7 +21,11 @@ function App() {
   }
 
   function holdDice(id) {
-    console.log(id)
+    setDice((oldDice) =>
+      oldDice.map((die) => {
+        return die.id === id ? { ...die, isHeld: !die.isHeld } : die;
+      })
+    );
   }
 
   const die = dice.map((item) => {
@@ -38,7 +42,7 @@ function App() {
 
   return (
     <main>
-      <div className="dice-container" >{die}</div>
+      <div className="dice-container">{die}</div>
       <button className="roll-btn" onClick={rollDice}>
         Roll
       </button>
