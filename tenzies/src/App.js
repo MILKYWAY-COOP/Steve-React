@@ -4,6 +4,21 @@ import { nanoid } from 'nanoid';
 
 function App() {
   const [dice, setDice] = React.useState(allNewDice());
+  const [tenzies, setTenzies] = React.useState(false);
+
+  React.useEffect(() => {
+    const myValues = [];
+    const myHelds = [];
+    const allEqual = (arr) => arr.every((v) => v === arr[0]);
+    for (let i = 0; i < dice.length; i++) {
+      myValues.push(dice[i].value);
+      myHelds.push(dice[i].isHeld);
+    }
+    if (allEqual(myValues) && allEqual(myHelds)) {
+      setTenzies(true)
+      console.log("You won")
+    }
+  }, [dice]);
 
   function generateNewDie() {
     return {
