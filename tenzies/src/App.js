@@ -69,7 +69,7 @@ function App() {
 
   return (
     <>
-      {tenzies ? <Confetti /> : ''}
+      {tenzies && <Confetti />}
       <main>
         <h1 className="title">Tenzies</h1>
         <p className="instructions">
