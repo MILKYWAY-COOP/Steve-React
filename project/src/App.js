@@ -2,27 +2,44 @@ import React from 'react';
 import './index.css';
 
 export default function App() {
-  const [movie, setMovie] = React.useState({});
   const [location, setLocation] = React.useState('');
-  const [image, setImage] = React.useState('')
+  const [image, setImage] = React.useState('');
+  const [place, setPlace] = React.useState('New York');
 
-  React.useEffect(() => {
-    console.log('Effect ran');
-    fetch(`https://imdb-api.com/en/API/Title/k_1234567/tt1832382`)
-      .then((res) => res.json())
-      .then((data) => setMovie(data));
-  }, [location]);
+  console.log(location);
+  // const images = [location.results];
+  // console.log(images)
 
   function handleChange(event) {
-    setLocation(event.target.value)
+    setPlace(event.target.value);
   }
 
-  console.log(location)
+  React.useEffect(() => {
+    fetch(
+      `https://imdb-api.com/API/AdvancedSearch/k_iawy09dx?locations=${place}`,
+      {
+        method: 'GET', // or 'PUT'
+        headers: {
+          'X-Api-Key': 'i7oVWpYi/IOshCqTmDSz6A==BiCSSO2IJvwqqeO4'
+        }
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => setLocation(data));
+  }, [place]);
+
   return (
     <div className="App">
       <div className="form">
-        <label for="place">Tell us where you want to go..</label>
-        <input type="text" name="place" onChange={handleChange} placeholder="place"/>
+        <label htmlFor="place">Tell us where you want to go..</label>
+        <input
+          type="text"
+          name="place"
+          placeholder="Example San Fransisco"
+        />
+      </div>
+      <div>
+        <div></div>
       </div>
     </div>
   );
