@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    background-color: burlywood;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type='text'] {
+  margin-bottom: 15px;
+  height: 30px;
+  text-indent: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  display: block;
+}
+
+

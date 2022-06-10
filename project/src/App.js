@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css';
 
-function App() {
+export default function App() {
+  const [movie, setMovie] = React.useState({});
+  const [place, setPlace] = React.useState('');
+
+  React.useEffect(() => {
+    console.log('Effect ran');
+    fetch(`https://imdb-api.com/en/API/Title/k_1234567/tt1832382`)
+      .then((res) => res.json())
+      .then((data) => setMovie(data));
+  }, [place]);
+
+  console.log(movie.title);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form className="form--form">
+        <label for="place">Tell us where you want to go..</label>
+        <input type="text" name="place" />
+      </form>
     </div>
   );
 }
-
-export default App;
