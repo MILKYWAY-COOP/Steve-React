@@ -3,30 +3,41 @@ import './index.css';
 
 export default function App() {
   const [location, setLocation] = React.useState('');
-  const [image, setImage] = React.useState('');
-  const [place, setPlace] = React.useState('New York');
+  const [image, setImage] = React.useState([]);
+  const [place, setPlace] = React.useState('');
 
-  console.log(location);
-  // const images = [location.results];
-  // console.log(images)
 
-  function handleChange(event) {
-    setPlace(event.target.value);
-  }
-
-  React.useEffect(() => {
+  function handleClick() {
     fetch(
-      `https://imdb-api.com/API/AdvancedSearch/k_iawy09dx?locations=${place}`,
+      `https://imdb-api.com/API/AdvancedSearch/k_nxc9dbfe?locations=${place}`,
       {
-        method: 'GET', // or 'PUT'
-        headers: {
-          'X-Api-Key': 'i7oVWpYi/IOshCqTmDSz6A==BiCSSO2IJvwqqeO4'
-        }
+        method: 'GET' // or 'PUT'
       }
     )
       .then((res) => res.json())
       .then((data) => setLocation(data));
-  }, [place]);
+  }
+
+  setImage([...location.results])
+  console.log(setImage)
+
+  // function getLocation() {
+  //   fetch(
+  //     `https://imdb-api.com/API/AdvancedSearch/k_iawy09dx?locations=${place}`,
+  //     {
+  //       method: 'GET', // or 'PUT'
+  //       headers: {
+  //         'X-Api-Key': 'z+MsJ/LjQJqDeN8ITnug3w==OXqGX13g8JJgQPXI'
+  //       }
+  //     }
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setLocation(data));
+  // }
+
+  function handleChange(event) {
+    setPlace(event.target.value);
+  }
 
   return (
     <div className="App">
@@ -36,10 +47,14 @@ export default function App() {
           type="text"
           name="place"
           placeholder="Example San Fransisco"
+          onChange={handleChange}
         />
+        <button onClick={() => handleClick()}>Get place</button>
       </div>
       <div>
-        <div></div>
+        <div>
+          <pre>{JSON.stringify(location.results, null, 2)}</pre>
+        </div>
       </div>
     </div>
   );
