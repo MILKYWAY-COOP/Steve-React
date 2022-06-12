@@ -18,8 +18,7 @@ export default function App() {
       .then((data) => setLocation(data));
   }
 
-  setImage([...location.results])
-  console.log(setImage)
+  console.log(location);
 
   // function getLocation() {
   //   fetch(
@@ -53,7 +52,7 @@ export default function App() {
       </div>
       <div>
         <div>
-          <pre>{JSON.stringify(location.results, null, 2)}</pre>
+          <pre>{JSON.stringify(location, null, 2)}</pre>
         </div>
       </div>
     </div>

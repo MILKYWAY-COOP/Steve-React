@@ -1,0 +1,47 @@
+.popout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.popoutContent {
+  background-color: white;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.rating {
+  width: fit-content;
+}
+
+.title {
+  text-align: center;
+}
+
+.popoutContent button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red;
+  font-size: 30px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #fff;
+  outline: none;
+  border: 0px;
+}
