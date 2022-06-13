@@ -1,5 +1,6 @@
 export default function Quiz(props) {
     const { question, difficulty, correctAnswer } = props
+    console.log(question)
     return (
         <>
             <h1>{ question}</h1>
