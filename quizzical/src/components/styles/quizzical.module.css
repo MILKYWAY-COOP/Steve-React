@@ -1,0 +1,28 @@
+.quizzical {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.topRight {
+  width: 297px;
+  height: 235px;
+  position: absolute;
+  left: 62.24%;
+  right: -62.24%;
+  top: 161.16%;
+  bottom: -161.16%;
+  background-color: #fffad1;
+  transform: rotate(-128.49deg);
+}
+
+.h1 {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50.25px;
+  line-height: 37px;
+  text-align: center;
+  color: #293264;
+}
