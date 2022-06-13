@@ -9,8 +9,6 @@ function App() {
   const [rolls, setRolls] = React.useState(0);
 
   const buttonMessage = tenzies ? 'New Game' : 'Roll';
-  const now = new Date()
-  console.log(now.getTime())
 
   React.useEffect(() => {
     const myValues = [];
