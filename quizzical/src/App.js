@@ -4,8 +4,8 @@ import Quiz from './components/Quizzes';
 
 function App() {
   const [home, setHome] = useState(false);
-  const [quiz, setQuiz] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [quiz, setQuiz] = useState([]);
 
   function handleClick() {
     getLocation();
@@ -16,32 +16,48 @@ function App() {
     // if we were already searching for a location, don't do it again
     if (isLoading) return;
 
-    //fetching the data
-    const quizData = await fetch(
-      'https://opentdb.com/api.php?amount=10&type=multiple'
-    );
-    const quizDataJson = await quizData.json();
+    //fetching the data 10x
+    // for (let i = 0; i++; i < 10) {
+    //   const quizData = await fetch(
+    //     'https://opentdb.com/api.php?amount=1&type=multiple'
+    //   );
+    //   const quizDataJson = await quizData.json();
+    //   console.log(quizDataJson.results);
+    //   console.log("This is working")
+    //   //saving the data to state
+    //   setQuiz((preQuiz) => preQuiz.push(quizDataJson.results[0]));
+    //   setIsLoading(false);
+    // }
 
-    //saving the data to state
-    setQuiz(quizDataJson.results[0]);
-    setIsLoading(false);
+    for (let i = 0; i < 10; i++) {
+      const response = await fetch(
+        `https://opentdb.com/api.php?amount=1&type=multiple`
+      );
+      const json = await response.json();
+      setQuiz((preQuiz) => preQuiz.push(json.results[0]));
+    }
   };
 
-  console.log(quiz)
+  console.log(quiz);
 
-  const questionsData = quiz.map((item) => {
-    console.log(item)
-    return (
-      <Quiz
-        question={item.question}
-        difficulty={item.difficulty}
-        correctAnswer={item.correct_answer}
-      />
-    );
-  });
+  // const questionsData = quiz.map((item) => {
+  //   console.log(item)
+  //   return (
+
+  //   );
+  // });
   return (
     <div className="App" onClick={() => handleClick()}>
-      {!home ? <Quizzical /> : questionsData}
+      {!home ? (
+        <Quizzical />
+      ) : (
+        <Quiz
+          question={quiz.question}
+          difficulty={quiz.difficulty}
+          correctAnswer={quiz.correct_answer}
+        />
+      )}
+      <div>{Object.keys(quiz)}</div>
     </div>
   );
 }
