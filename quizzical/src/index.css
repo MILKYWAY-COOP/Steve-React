@@ -1,4 +1,6 @@
 .App {
+  height: 100vh;
+  background-color: bisque;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,24 +9,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
 .quizzical {
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: 'Karla', sans-serif;
   align-items: center;
 }
 
 .topRight {
+  margin-left: auto;
+  margin-right: 0;
   width: 297px;
   height: 235px;
-  position: absolute;
-  left: 62.24%;
-  right: -62.24%;
-  top: 161.16%;
-  bottom: -161.16%;
   background-color: #fffad1;
   transform: rotate(-128.49deg);
+  border-radius: 71% 29% 44% 56% / 35% 49% 51% 65%;
 }
 
 .h1 {
@@ -37,10 +36,27 @@
 }
 
 .button {
-  position: absolute;
   width: 193px;
   height: 52px;
   background: #4d5b9e;
+  color: white;
   border-radius: 15px;
   font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  border: 0px;
+  transition: background-color 1s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #0f0247;
+}
+
+.bottomLeft {
+  width: 297px;
+  height: 235px;
+  border-radius: 50% 50% 100% 0% / 96% 51% 49% 4%;
+  background: #deebf8;
+  margin-top: auto;
+  margin-bottom: 0;
 }
