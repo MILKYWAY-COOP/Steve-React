@@ -5,40 +5,21 @@ import Quizzes from './components/Quizzes';
 function App() {
   const [home, setHome] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [quiz, setQuiz] = useState([
-    {
-      category: 'Animals',
-      correct_answer: 'Burrow',
-      difficulty: 'easy',
-      incorrect_answers: ['Nest', 'Den', 'Dray'],
-      question: 'What is the name of a rabbit&#039;s abode?',
-      type: 'multiple'
-    }
-  ]);
-
-  const getQuiz = async () => {
-    if (isLoading) return;
-    try {
-      setIsLoading(true);
-      for (let i = 0; i < 10; i++) {
-        const response = await fetch(
-          `https://opentdb.com/api.php?amount=1&type=multiple`
-        );
-        const json = await response.json();
-        setQuiz(prevQuiz => {
-          return [
-            ...prevQuiz, 
-            quiz.push(json.results[0])
-          ]
-        }) 
-      }
-      setIsLoading(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const [quiz, setQuiz] = useState([]);
 
   React.useEffect(() => {
+    async function getQuiz() {
+      //if (isLoading) return;
+      setIsLoading(true);
+      const res = await fetch(
+        'https://opentdb.com/api.php?amount=50&type=multiple'
+      );
+      const data = await res.json();
+      setQuiz((prevQuiz) => {
+        return [...prevQuiz, quiz.push(data.results)];
+      });
+      setIsLoading(false);
+    }
     getQuiz();
   }, []);
 
@@ -46,9 +27,7 @@ function App() {
     setHome(true);
   }
 
-  //console.log(quiz[2].category);
-  //console.log(Object.keys(quiz).length)
-  console.log(Object.entries(quiz))
+  console.log(quiz);
 
   const Data = quiz.items?.map((item) => {
     return (

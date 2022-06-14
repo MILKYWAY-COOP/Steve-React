@@ -13,12 +13,13 @@ export default function Meme() {
     async function getMemes() {
       const res = await fetch('https://api.imgflip.com/get_memes')
       const data = await res.json()
-      console.log(data)
       setAllMemeImages(data.data.memes)
     }
 
     getMemes()
   }, []);
+
+  console.log(allMemeImages)
 
   function getMemeImage() {
     const randomNumber = Math.floor(Math.random() * allMemeImages.length);
