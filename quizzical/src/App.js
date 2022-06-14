@@ -8,20 +8,21 @@ function App() {
   const [quiz, setQuiz] = useState([]);
 
   React.useEffect(() => {
-    async function getQuiz() {
-      //if (isLoading) return;
-      setIsLoading(true);
-      const res = await fetch(
-        'https://opentdb.com/api.php?amount=50&type=multiple'
-      );
-      const data = await res.json();
-      setQuiz((prevQuiz) => {
-        return [...prevQuiz, quiz.push(data.results)];
-      });
-      setIsLoading(false);
-    }
-    getQuiz();
-  }, []);
+    getQuiz()
+  }, [])
+
+  function getQuiz() {
+    fetch('https://opentdb.com/api.php?amount=50&type=multiple').then((res) => {
+      if (!res.ok) {
+        throw new Error(
+          `This is an HTTP error: The status is ${res.status}`
+        );
+      }
+      return res.json();
+    }).then((data) => {
+      setQuiz(data.results)
+    })
+  }
 
   function handleClick() {
     setHome(true);
