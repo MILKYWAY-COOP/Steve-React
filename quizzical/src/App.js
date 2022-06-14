@@ -31,7 +31,6 @@ function App() {
             quiz.push(json.results[0])
           ]
         }) 
-        console.log(quiz);
       }
       setIsLoading(false);
     } catch (err) {
@@ -47,7 +46,9 @@ function App() {
     setHome(true);
   }
 
-  console.log(quiz);
+  //console.log(quiz[2].category);
+  //console.log(Object.keys(quiz).length)
+  console.log(Object.entries(quiz))
 
   const Data = quiz.items?.map((item) => {
     return (
