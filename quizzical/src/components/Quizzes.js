@@ -1,3 +1,5 @@
+import styles from './styles/Quizzes.module.css';
+
 export default function Quiz(props) {
   const { question, difficulty, correctAnswer, incorrectAnswers } = props;
   const answers = [correctAnswer, ...incorrectAnswers];
@@ -8,10 +10,11 @@ export default function Quiz(props) {
   });
 
   return (
-    <div className="quiz">
-      <div className="question">{question}</div>
-      <div className="difficulty">{difficulty}</div>
-      <div className="answers">{ans}</div>
+    <div className={styles.quiz}>
+      <div className={styles.question}>{question}</div>
+      <div className={styles.difficulty}>{difficulty}</div>
+      <div className={styles.answers}>{ans}</div>
+      <hr />
     </div>
   );
 }
