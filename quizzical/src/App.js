@@ -4,7 +4,6 @@ import Quizzes from './components/Quizzes';
 
 function App() {
   const [home, setHome] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [quiz, setQuiz] = useState([]);
 
   React.useEffect(() => {
@@ -29,23 +28,19 @@ function App() {
     setHome(true);
   }
 
-  // const Data = quiz.map((difficulty, question, correct_answer) => {
-  //   return (
-  //     <Quizzes
-  //       question={question}
-  //       difficulty={difficulty}
-  //       correctAnswer={correct_answer}
-  //     />
-  //   );
-  // });
-
-  quiz.forEach((difficulty, question, correct_answer) => {
-    console.log(`${difficulty} ${question} ${correct_answer}`);
+  const Data = quiz.map(({ difficulty, question, correct_answer }) => {
+    return (
+      <Quizzes
+        question={question}
+        difficulty={difficulty}
+        correctAnswer={correct_answer}
+      />
+    );
   });
 
   return (
     <div className="App" onClick={() => handleClick()}>
-      {/* !home ? <Quizzical /> : <>{!isLoading && Data}</> */}
+      {home ? <Quizzical /> : <div>{Data}</div>}
     </div>
   );
 }
