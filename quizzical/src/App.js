@@ -1,28 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Quizzical from './components/Quizzical';
 import Quizzes from './components/Quizzes';
+import { useApp } from './components/quizContext';
 
 function App() {
   const [home, setHome] = useState(true);
-  const [quiz, setQuiz] = useState([]);
-
-  useEffect(() => {
-    getQuiz();
-  }, []);
-
-  function getQuiz() {
-    fetch('https://opentdb.com/api.php?amount=3&type=multiple')
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`This is an HTTP error: The status is ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setQuiz(data.results);
-      });
-  }
+  const { quiz } = useApp();
 
   function handleClick() {
     setHome(false);
@@ -49,7 +32,7 @@ function App() {
       ) : (
         <div className="Card">
           {Data}
-          <button className='checkAnswers'>Check Answers</button>
+          <button className="checkAnswers">Check Answers</button>
         </div>
       )}
     </div>

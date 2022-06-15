@@ -1,8 +1,8 @@
 import styles from './styles/Quizzes.module.css';
-import { nanoid } from 'nanoid';
+
 
 export default function Quiz(props) {
-  const { question, correctAnswer, incorrectAnswers } = props;
+  const { question, correctAnswer, incorrectAnswers , qIndex} = props;
   const answers = [correctAnswer, ...incorrectAnswers];
   const shuffledAnswers = answers.sort(() => 0.5 - Math.random());
 
