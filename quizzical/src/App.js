@@ -8,41 +8,44 @@ function App() {
   const [quiz, setQuiz] = useState([]);
 
   React.useEffect(() => {
-    getQuiz()
+    getQuiz();
   }, []);
 
   function getQuiz() {
-    fetch('https://opentdb.com/api.php?amount=5&type=multiple').then((res) => {
-      if (!res.ok) {
-        throw new Error(
-          `This is an HTTP error: The status is ${res.status}`
-        );
-      }
-      return res.json();
-    }).then((data) => {
-      setQuiz(data.results)
-    })
+    fetch('https://opentdb.com/api.php?amount=5&type=multiple')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`This is an HTTP error: The status is ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setQuiz(data.results);
+      });
   }
 
   function handleClick() {
     setHome(true);
   }
 
-  console.log(quiz);
+  // const Data = quiz.map((difficulty, question, correct_answer) => {
+  //   return (
+  //     <Quizzes
+  //       question={question}
+  //       difficulty={difficulty}
+  //       correctAnswer={correct_answer}
+  //     />
+  //   );
+  // });
 
-  const Data = quiz.map((difficulty, question, correct_answer) => {
-    return (
-      <Quizzes
-        question={question}
-        difficulty={difficulty}
-        correctAnswer={correct_answer}
-      />
-    );
+  quiz.forEach((difficulty, question, correct_answer) => {
+    console.log(`${difficulty} ${question} ${correct_answer}`);
   });
 
   return (
     <div className="App" onClick={() => handleClick()}>
-      !home ? <Quizzical /> : <>{!isLoading && Data}</>
+      {/* !home ? <Quizzical /> : <>{!isLoading && Data}</> */}
     </div>
   );
 }
