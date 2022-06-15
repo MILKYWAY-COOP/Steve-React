@@ -6,7 +6,7 @@ function App() {
   const [home, setHome] = useState(true);
   const [quiz, setQuiz] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     getQuiz();
   }, []);
 
@@ -25,17 +25,16 @@ function App() {
   }
 
   function handleClick() {
-    console.log('clicked');
     setHome(false);
-    console.log(home);
   }
 
-  const Data = quiz.map(({ difficulty, question, correct_answer }) => {
+  const Data = quiz.map(({ difficulty, question, correct_answer, incorrect_answers }) => {
     return (
       <Quizzes
         question={question}
         difficulty={difficulty}
         correctAnswer={correct_answer}
+        incorrectAnswers={incorrect_answers}
       />
     );
   });
