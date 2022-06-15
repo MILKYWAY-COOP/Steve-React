@@ -12,14 +12,11 @@ function App() {
   }
 
   const Data = quiz.map(
-    ({ difficulty, question, correct_answer, incorrect_answers }, index) => {
+    ({ difficulty, question, correct_answer, answers }, index) => {
       return (
         <Quizzes
           key={index}
-          question={question}
-          difficulty={difficulty}
-          correctAnswer={correct_answer}
-          incorrectAnswers={incorrect_answers}
+          {...{ difficulty, question, correctAnswer: correct_answer, answers }}
           qIndex={index}
         />
       );

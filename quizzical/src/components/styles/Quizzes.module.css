@@ -1,46 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
 .quiz {
-    font-family: 'Karla', sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+  font-family: 'Karla', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
 .question {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-    color: #262b4a;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #262b4a;
 }
 
 .answers {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 5px;
-    color: #4D5B9E;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5px;
+  color: #4d5b9e;
+}
+
+.answerChecked {
+  height: auto;
+  padding: 5px;
+  border: solid #4d5b9e 2px;
+  border-radius: 10px;
+  width: auto;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #4d5b9e;
+  color: white;
 }
 
 .answer {
-    height: auto;
-    padding: 5px;
-    border: solid #4D5B9E 2px;
-    border-radius: 10px;
-    width: auto;
-    margin: 10px;
-    cursor: pointer;
+  height: auto;
+  padding: 5px;
+  border: solid #4d5b9e 2px;
+  border-radius: 10px;
+  width: auto;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .answer:hover {
-    background: #4D5B9E;
-    color: white;
+  background: #4d5b9e;
+  color: white;
 }
 
-.horizontalLine {  
-    border: none; 
-    border-bottom: 1px solid rgb(69, 68, 68);  
-    height: 1px;
+.horizontalLine {
+  border: none;
+  border-bottom: 1px solid rgb(69, 68, 68);
+  height: 1px;
 }

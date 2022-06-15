@@ -1,17 +1,21 @@
 import styles from './styles/Quizzes.module.css';
 import { useApp } from './quizContext';
+import { useEffect } from 'react';
 
 export default function Quiz(props) {
-  const { question, correctAnswer, incorrectAnswers, qIndex } = props;
-
-  const answers = [correctAnswer, ...incorrectAnswers];
-  const shuffledAnswers = answers.sort(() => 0.5 - Math.random());
+  const { question, correctAnswer, answers, qIndex } = props;
   const { setAllQuestions, allQuestions } = useApp();
-  
 
-  const ans = shuffledAnswers.map((answer, index) => {
+  const ans = answers.map((answer, index) => {
+    // check if user has answered this question
+    const userAnswer = allQuestions[qIndex].userAnswer;
+    const isChecked = userAnswer === answer ? true : false;
+
+    // toggle class for correct/incorrect answer
+    const checked = isChecked ? styles.answerChecked : styles.answer;
+
     return (
-      <div key={index} className={styles.answer} onClick={() => toggleClick(answer)}>
+      <div key={index} className={checked} onClick={() => toggleClick(answer)}>
         {answer}
       </div>
     );
@@ -30,18 +34,14 @@ export default function Quiz(props) {
       } else {
         return question;
       }
-    }
-    );
+    });
     setAllQuestions(newAllQuestions);
-    console.log(allQuestions);
   }
 
   return (
     <div className={styles.quiz}>
       <div className={styles.question}>{question}</div>
-      <div className={styles.answers} >
-        {ans}
-      </div>
+      <div className={styles.answers}>{ans}</div>
       <div className={styles.horizontalLine}></div>
     </div>
   );
