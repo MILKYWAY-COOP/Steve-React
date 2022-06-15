@@ -34,6 +34,6 @@ export const ContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <QuizContext.Provider value={{ quiz }}>{children}</QuizContext.Provider>
+    <QuizContext.Provider value={{ quiz, allQuestions, setAllQuestions }}>{children}</QuizContext.Provider>
   );
 };
