@@ -3,8 +3,8 @@ export default function Quiz(props) {
   const answers = [correctAnswer, ...incorrectAnswers];
   const shuffledAnswers = answers.sort((a, b) => 0.5 - Math.random());
 
-  const ans = answers.map((answer, index) => {
-    return <div key={index}>{shuffledAnswers}</div>;
+  const ans = shuffledAnswers.map((answer, index) => {
+    return <div key={index}>{answer}</div>;
   });
 
   return (
