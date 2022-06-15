@@ -1,4 +1,5 @@
 import styles from './styles/Quizzes.module.css';
+import { nanoid } from 'nanoid';
 
 export default function Quiz(props) {
   const { question, correctAnswer, incorrectAnswers } = props;
