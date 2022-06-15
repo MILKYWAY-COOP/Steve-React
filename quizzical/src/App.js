@@ -9,10 +9,10 @@ function App() {
 
   React.useEffect(() => {
     getQuiz()
-  }, [])
+  }, []);
 
   function getQuiz() {
-    fetch('https://opentdb.com/api.php?amount=50&type=multiple').then((res) => {
+    fetch('https://opentdb.com/api.php?amount=5&type=multiple').then((res) => {
       if (!res.ok) {
         throw new Error(
           `This is an HTTP error: The status is ${res.status}`
@@ -30,19 +30,19 @@ function App() {
 
   console.log(quiz);
 
-  const Data = quiz.items?.map((item) => {
+  const Data = quiz.map((difficulty, question, correct_answer) => {
     return (
       <Quizzes
-        question={item.question}
-        difficulty={item.difficulty}
-        correctAnswer={item.correct_answer}
+        question={question}
+        difficulty={difficulty}
+        correctAnswer={correct_answer}
       />
     );
   });
 
   return (
     <div className="App" onClick={() => handleClick()}>
-      {!home ? <Quizzical /> : <>{!isLoading && Data}</>}
+      !home ? <Quizzical /> : <>{!isLoading && Data}</>
     </div>
   );
 }
