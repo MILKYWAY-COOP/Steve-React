@@ -8,12 +8,10 @@ export default function Quiz(props) {
   });
 
   return (
-    <>
-      <div className="quiz">
-        <div className="question">{question}</div>
-        <div className="difficulty">{difficulty}</div>
-        <div className="answers">{ans}</div>
-      </div>
-    </>
+    <div className="quiz">
+      <div className="question">{question}</div>
+      <div className="difficulty">{difficulty}</div>
+      <div className="answers">{ans}</div>
+    </div>
   );
 }
