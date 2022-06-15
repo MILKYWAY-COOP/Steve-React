@@ -10,8 +10,8 @@ export default function Quiz(props) {
     return <div key={index} className={styles.answer}>{answer}</div>;
   });
 
-  function toggleClick() {
-    console.log("Clicked");
+  function toggleClick(event) {
+    console.log(event.currentTarget.innerText);
   }
 
   return (
