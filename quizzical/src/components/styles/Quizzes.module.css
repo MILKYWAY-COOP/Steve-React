@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
-* {
+.quiz {
     font-family: 'Karla', sans-serif;
+}
+
+.answers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
 }
