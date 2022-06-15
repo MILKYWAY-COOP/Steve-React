@@ -3,7 +3,7 @@ import Quizzical from './components/Quizzical';
 import Quizzes from './components/Quizzes';
 
 function App() {
-  const [home, setHome] = useState(false);
+  const [home, setHome] = useState(true);
   const [quiz, setQuiz] = useState([]);
 
   React.useEffect(() => {
@@ -25,7 +25,9 @@ function App() {
   }
 
   function handleClick() {
-    setHome(true);
+    console.log('clicked');
+    setHome(false);
+    console.log(home);
   }
 
   const Data = quiz.map(({ difficulty, question, correct_answer }) => {
@@ -39,8 +41,8 @@ function App() {
   });
 
   return (
-    <div className="App" onClick={() => handleClick()}>
-      {home ? <Quizzical /> : <div>{Data}</div>}
+    <div className="App">
+      {home ? <Quizzical handleClick={handleClick} /> : <div>{Data}</div>}
     </div>
   );
 }
