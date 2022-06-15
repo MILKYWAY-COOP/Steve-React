@@ -1,4 +1,4 @@
-body{
+body {
   background-color: bisque;
 }
 
@@ -9,14 +9,15 @@ body{
   justify-content: center;
 }
 
-.Card { 
+.Card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: center;
   justify-content: center;
   margin: 20px;
   height: auto;
-  width: 500px;
+  width: 800px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
@@ -71,4 +72,16 @@ body{
   background: #deebf8;
   margin-top: auto;
   margin-bottom: 0;
+}
+
+.checkAnswers {
+  margin-top: 20px;
+  width: 180px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Karla', sans-serif;
+  background-color: #4D5B9E;
+  color: white;
+  font-size: 16px;
 }

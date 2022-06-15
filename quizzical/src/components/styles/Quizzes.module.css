@@ -12,6 +12,7 @@
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
+    color: #262b4a;
 }
 
 
@@ -21,19 +22,26 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 5px;
+    color: #4D5B9E;
 }
 
 .answer {
     height: auto;
     padding: 5px;
-    border: solid #cb4154 2px;
+    border: solid #4D5B9E 2px;
     border-radius: 10px;
     width: auto;
     margin: 10px;
     cursor: pointer;
 }
 
+.answer:hover {
+    background: #4D5B9E;
+    color: white;
+}
+
 .horizontalLine {  
     border: none; 
     border-bottom: 1px solid rgb(69, 68, 68);  
-   }
+    height: 1px;
+}

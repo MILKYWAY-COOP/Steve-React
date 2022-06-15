@@ -49,7 +49,7 @@ function App() {
       ) : (
         <div className="Card">
           {Data}
-          <button>Check Answers</button>
+          <button className='checkAnswers'>Check Answers</button>
         </div>
       )}
     </div>
