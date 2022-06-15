@@ -11,7 +11,7 @@ function App() {
   }, []);
 
   function getQuiz() {
-    fetch('https://opentdb.com/api.php?amount=5&type=multiple')
+    fetch('https://opentdb.com/api.php?amount=3&type=multiple')
       .then((res) => {
         if (!res.ok) {
           throw new Error(`This is an HTTP error: The status is ${res.status}`);
@@ -28,20 +28,30 @@ function App() {
     setHome(false);
   }
 
-  const Data = quiz.map(({ difficulty, question, correct_answer, incorrect_answers }) => {
-    return (
-      <Quizzes
-        question={question}
-        difficulty={difficulty}
-        correctAnswer={correct_answer}
-        incorrectAnswers={incorrect_answers}
-      />
-    );
-  });
+  const Data = quiz.map(
+    ({ index, difficulty, question, correct_answer, incorrect_answers }) => {
+      return (
+        <Quizzes
+          key={index}
+          question={question}
+          difficulty={difficulty}
+          correctAnswer={correct_answer}
+          incorrectAnswers={incorrect_answers}
+        />
+      );
+    }
+  );
 
   return (
     <div className="App">
-      {home ? <Quizzical handleClick={handleClick} /> : <div>{Data}</div>}
+      {home ? (
+        <Quizzical handleClick={handleClick} />
+      ) : (
+        <div className="Card">
+          {Data}
+          <button>Check Answers</button>
+        </div>
+      )}
     </div>
   );
 }
