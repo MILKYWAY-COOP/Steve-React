@@ -5,16 +5,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path='/' element={<Products />} />
-          <Route path='/checkout' element={<CheckOut />} />
+          <Route path="/" element={<Products />} />
+          <Route path="/checkout" element={<CheckOut />} />
         </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App;
