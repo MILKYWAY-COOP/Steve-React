@@ -1,5 +1,17 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useContext } from 'react';
 
-const cartContext = createContext();
+const CartContext = createContext();
 
-export default cartContext
+export function useApp() {
+    return useContext(CartContext);
+}
+
+export function CartProvider({children}) { 
+    return (
+        <CartContext.Provider value={{ item: 1 }}>
+            {children}
+        </CartContext.Provider>
+    )
+}
+
+export default CartContext
