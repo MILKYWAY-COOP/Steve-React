@@ -9,8 +9,7 @@ function Products() {
     { name: 'shoes', price: 150 },
     { name: 'socks', price: 50 },
     { name: 'gloves', price: 100 },
-    { name: 'hat', price: 50 },
-    { name: 'jacket', price: 200 }
+    { name: 'hat', price: 50 }
   ];
 
   return (
