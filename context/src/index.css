@@ -1,0 +1,12 @@
+nav {
+  background-color: burlywood;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > * {
+  margin: 20px;
+}
