@@ -14,7 +14,7 @@ function Products() {
   ];
 
   return (
-    <div className="products">
+    <div className="product">
       {products.map((product) => (
         <Card key={product.name} name={product.name} price={product.price} />
       ))}

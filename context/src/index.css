@@ -1,5 +1,5 @@
 nav {
-  background-color: burlywood;
+  background-color: rgb(241, 206, 161);
   margin: 0px;
   display: flex;
   flex-direction: row;
@@ -9,4 +9,24 @@ nav {
 
 nav > * {
   margin: 20px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  margin: 20px;
+  width: auto;
+  height: auto;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(241, 206, 161);
+  margin: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
