@@ -16,7 +16,11 @@ function Products() {
   return (
     <div className="product">
       {products.map((product) => (
-        <Card key={product.name} name={product.name} price={product.price} />
+        <Card
+          key={product.name}
+          name={product.name}
+          price={product.price}
+        />
       ))}
     </div>
   );

@@ -1,10 +1,12 @@
 nav {
-  background-color: rgb(241, 206, 161);
-  margin: 0px;
+  height: 50px;
   display: flex;
-  flex-direction: row;
+  padding: 20px 36px;
+  background-color: rgb(241, 206, 161);
   justify-content: space-between;
-  align-items: center;
+  width: auto;
+  border-bottom: 1px solid rgb(42, 48, 45);
+  overflow: hidden;
 }
 
 nav > * {
@@ -29,4 +31,8 @@ nav > * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.product-box {
+  height: 40px;
 }
