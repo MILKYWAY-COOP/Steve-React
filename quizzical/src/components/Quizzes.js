@@ -3,7 +3,7 @@ import { useApp } from './quizContext';
 import { useEffect } from 'react';
 
 export default function Quiz(props) {
-  const { question, correctAnswer, answers, qIndex } = props;
+  const { question, correctAnswer, answers, qIndex, checkAnswers } = props;
   const { setAllQuestions, allQuestions } = useApp();
 
   const ans = answers.map((answer, index) => {
@@ -14,15 +14,22 @@ export default function Quiz(props) {
     // toggle class for correct/incorrect answer
     const checked = isChecked ? styles.answerChecked : styles.answer;
 
+    const isCorrect =
+      answer === correctAnswer ? styles.correct : styles.incorrect;
+
     return (
-      <div key={index} className={checked} onClick={() => toggleClick(answer)}>
+      <div
+        key={index}
+        className={`${checkAnswers ? isCorrect : checked}`}
+        onClick={() => toggleClick(answer)}
+      >
         {answer}
       </div>
     );
   });
 
   function toggleClick(answer) {
-    // add user answer to allQuestions
+    if (checkAnswers) return;
     const newQuestion = {
       question: qIndex,
       userAnswer: answer

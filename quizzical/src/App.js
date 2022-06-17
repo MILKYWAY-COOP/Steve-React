@@ -5,6 +5,7 @@ import { useApp } from './components/quizContext';
 
 function App() {
   const [home, setHome] = useState(true);
+  const [checkAnswers, setCheckAnswers] = useState(false);
   const { quiz } = useApp();
 
   function handleClick() {
@@ -16,7 +17,13 @@ function App() {
       return (
         <Quizzes
           key={index}
-          {...{ difficulty, question, correctAnswer: correct_answer, answers }}
+          {...{
+            difficulty,
+            question,
+            correctAnswer: correct_answer,
+            answers,
+            checkAnswers
+          }}
           qIndex={index}
         />
       );
@@ -30,7 +37,12 @@ function App() {
       ) : (
         <div className="Card">
           {Data}
-          <button className="checkAnswers">Check Answers</button>
+          <button
+            className="checkAnswers"
+            onClick={() => setCheckAnswers(!checkAnswers)}
+          >
+            Check Answers
+          </button>
         </div>
       )}
     </div>

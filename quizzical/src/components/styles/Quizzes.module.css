@@ -27,12 +27,12 @@
 .answerChecked {
   height: auto;
   padding: 5px;
-  border: solid #4d5b9e 2px;
   border-radius: 10px;
   width: auto;
   margin: 10px;
   cursor: pointer;
   background-color: #4d5b9e;
+  border: solid #4d5b9e 2px;
   color: white;
 }
 
@@ -46,10 +46,36 @@
   cursor: pointer;
 }
 
-.answer:hover {
-  background: #4d5b9e;
+.correct {
+  height: auto;
+  padding: 5px;
+  border-radius: 10px;
+  width: auto;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #44df54;
+  border: solid #44df54 2px;
   color: white;
 }
+
+.incorrect {
+  height: auto;
+  padding: 5px;
+  border-radius: 10px;
+  width: auto;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #df5644;
+  border: solid #df5644 2px;
+  color: white;
+}
+
+.answer:hover {
+  background: #a5b1eb;
+  border: solid #a5b1eb 2px;
+  color: white;
+}
+
 
 .horizontalLine {
   border: none;
