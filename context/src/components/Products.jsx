@@ -12,4 +12,14 @@ function Products() {
     { name: 'hat', price: 50 },
     { name: 'jacket', price: 200 }
   ];
+
+  return (
+    <div className="products">
+      {products.map((product) => (
+        <Card key={product.name} name={product.name} price={product.price} />
+      ))}
+    </div>
+  );
 }
+
+export default Products;
