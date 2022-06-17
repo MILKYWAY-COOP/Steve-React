@@ -14,9 +14,9 @@ nav > * {
 }
 
 .product {
-  display: grid;
-  grid-template-columns: repeat(4, 200px);
-  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: auto;
   height: auto;
 }
