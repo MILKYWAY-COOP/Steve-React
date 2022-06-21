@@ -5,9 +5,7 @@ import { useContext } from 'react';
 import { useApp} from '../cartContext'
 
 function Nav() {
-  const { item } = useApp();
-  console.log(item);
-
+  const {items} = useContext(cartContext);
   return (
     <nav>
       <Link to={'/'}>
@@ -16,7 +14,7 @@ function Nav() {
       <Link to={'/checkout'}>
         <div className="cart">
           <AiFillShopping />
-          <span>{item}</span>
+          <span>{items.length}</span>
         </div>
       </Link>
     </nav>

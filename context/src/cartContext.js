@@ -6,9 +6,15 @@ export function useApp() {
     return useContext(CartContext);
 }
 
-export function CartProvider({children}) { 
+export function CartProvider({ children }) { 
+    const [items, setItems] = useState([]);
+
+    const addToCart = (name, price) => { 
+        setItems([...items, { name, price }]);
+    }
+    
     return (
-        <CartContext.Provider value={{ item: 1 }}>
+        <CartContext.Provider value={{ items, addToCart}}>
             {children}
         </CartContext.Provider>
     )
