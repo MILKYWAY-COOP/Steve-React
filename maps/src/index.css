@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: burlywood;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 300px;
+  transform: translate(-50%, -50%);
+}
+
+.form > label {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  display: inline-block;
+}
+
+.form > input {
+  margin-bottom: 15px;
+  padding: 10px;
+  text-indent: 10px;
+  border: 1px solid rgb(22, 17, 17);
+  outline: none;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+}
+
+.form > .buttonWrapper > button {
+  cursor: pointer;
+  background-color: rgb(22, 17, 17);
+  transition: all 0.3s ease-in-out;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.info-window {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45vw, 1fr));
+  grid-gap: 1rem;
+}
+
+.mapWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.back-button {
+  position: fixed;
+  right: 55px;
+  top: 10px;
+  background-color: #008500;
+  border: none;
+  border-radius: 2px;
+  padding: 7px 40px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.loader {
+  position: absolute;
+}
+
+.form > .buttonWrapper .loading {
+  background-color: #008500;
+}
