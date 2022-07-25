@@ -5,7 +5,10 @@ export default function Form() {
         firstName: '',
         lastName: '',
         email: '',
+        comments: '',
     });
+
+    console.log(formData.comments);
 
     function handleChange(event) {
         setFormData(prevFormData => ({
@@ -31,6 +34,9 @@ export default function Form() {
             <input type="text" placeholder="Last Name" onChange={handleChange} name="lastName" value={formData.lastName}/>
             <input type="email" placeholder="Email" onChange={handleChange} name="email" value={formData.email}/>
             <button type="submit" onClick={() => validateEmail(email)}>Submit</button>
+
+            {/* add a text area to the form */}
+            <textarea placeholder="Enter your comments here" onChange={handleChange} value={ formData.comments} name="comments"/>
         </form>
     );
 }
