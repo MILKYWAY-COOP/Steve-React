@@ -15,7 +15,6 @@ export default function Meme() {
       const data = await res.json()
       setAllMemeImages(data.data.memes)
     }
-
     getMemes()
   }, []);
 
