@@ -1,5 +1,5 @@
 import React from 'react';
-import Troll from './images/trollface.jpg';
+import Troll from './images/trollface.svg';
 
 export default function Navbar() {
     return (
@@ -13,3 +13,4 @@ export default function Navbar() {
             </div>
         </nav>
     )
+}
