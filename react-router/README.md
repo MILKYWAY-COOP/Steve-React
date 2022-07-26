@@ -4,11 +4,6 @@
 
 - index.js
 
-```js
-// import App from './App';
-import App from './final/App';
-```
-
 #### Docs
 
 [React Router Docs](https://reactrouter.com/docs/en/v6/getting-started/overview)
